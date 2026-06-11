@@ -60,8 +60,8 @@ int main()
 the char <code>"\n"</code> at the end, is there to add a
 new-line.</p>
 
-<pre>gcc test1.c -o test1.exe
-./test1.exe
+<pre>$ gcc test1.c -o test1.exe
+$ ./test1.exe
 hello</pre>
 
 <p>the line <code>return 0</code> at the end is there to
@@ -71,8 +71,8 @@ case there was an error in the program is <code>1</code></p>
 
 <p>you can check this return'd code with:</p>
 
-<pre>./test1.exe
-echo $?
+<pre>$ ./test1.exe
+$ echo $?
 0</pre>
 
 
@@ -92,7 +92,7 @@ int main()
 {
   int d;
   d = 3;
-  printf("my-int, d: %d\n", d);
+  printf("d: %d\n", d);
   return 0;
 }
 </pre>
@@ -102,7 +102,7 @@ int main()
 <pre>
 $ gcc test2.c -o test2.exe
 $ ./test2.exe
-my-int, d: 3
+d: 3
 </pre>
 
 
@@ -112,14 +112,14 @@ my-int, d: 3
 
 <h3 id="ref_string">Text</h3>
 
-<p>A string example:</p>
+<p>char array example:</p>
 
 <pre>
 #include &lt;stdio.h&gt;
 
 int main()
 {
-  char s[] = "alpha";
+  char s[] = "alpha,";
   printf("hello %s\n", s);
   return 0;
 }
@@ -130,7 +130,7 @@ int main()
 <pre>
 $ gcc test3.c -o test3.exe
 $ ./test3.exe
-hello alpha
+hello alpha,
 </pre>
 
 
@@ -146,7 +146,7 @@ hello alpha
 int main()
 {
   float f = 3.2;
-  printf("my-float: %f\n", f);
+  printf("float: %f\n", f);
   return 0;
 }
 </pre>
@@ -154,7 +154,7 @@ int main()
 <pre>
 $ gcc test4.c -o test4.exe
 $ ./test4.exe
-my-float: 3.200000
+float: 3.200000
 </pre>
 
 <p>the standard format for a float is <code>'%f'</code>,
@@ -168,7 +168,7 @@ in-stead:</p>
 int main()
 {
   float f = 3.2;
-  printf("my-float: %g\n", f);
+  printf("g: %g\n", f);
   return 0;
 }
 </pre>
@@ -176,7 +176,7 @@ int main()
 <pre>
 $ gcc test4b.c -o test4b.exe
 $ ./test4b.exe
-my-float: 3.2
+g: 3.2
 </pre>
 
 
@@ -210,11 +210,7 @@ print_stc(struct _stc *stc)
 int
 main()
 {
-  struct _stc stc = {
-    11,
-    3.4,
-    "hello"
-  };
+  struct _stc stc = { 11, 3.4, "hello" };
   print_stc(&amp;stc);
   return 0;
 }
