@@ -15,10 +15,9 @@ pre {
 
 <h1>A small C library tutorial</h1>
 
-<p>
-This is a small tutorial that introduces how to create
-a small C library.
-</p>
+<p>This is a small tutorial that introduces how to create
+a small C library.</p>
+
 
 <hr />
 
@@ -67,9 +66,7 @@ char *func_c(int *, int);
 </pre>
 
 
-<p>
-And the implementation <code>"lbi.c"</code>:
-</p>
+<p>And the implementation <code>"lbi.c"</code>:</p>
 
 <pre>
 #include &lt;stdio.h&gt;
@@ -101,8 +98,8 @@ char *func_c(int *ar, int n)
 <p>Using gcc, we can compile this small lib with:</p>
 
 <pre>
-gcc -c lbi.c
-gcc -shared -o liblbi.so lbi.o
+$ gcc -c -fPIC lbi.c
+$ gcc -shared -o liblbi.so lbi.o
 </pre>
 
 
@@ -111,9 +108,7 @@ gcc -shared -o liblbi.so lbi.o
   with <code>-llbi</code>.
 </p>
 
-<p>
-  You can add more functions to it for your experimentations.
-</p>
+<p>You can add more functions to it for your experimentations.</p>
 
 
 
@@ -123,10 +118,8 @@ gcc -shared -o liblbi.so lbi.o
 
 <h3 id="ref_linking">Linking</h3>
 
-<p>
-  Compile with the parameter <code>-llbi</code> to link with the lib:<br />
-  <code>liblbi.so</code>.
-</p>
+<p>Compile with the parameter <code>-llbi</code> to link with the lib:<br />
+<code>liblbi.so</code>.</p>
 
 <pre>
 </pre>
@@ -157,17 +150,14 @@ $ echo $LD_LIBRARY_PATH
 
 
 
-
 <!-- ======================================================= -->
 
 <hr />
 
 <h3 id="ref_array">Arrays</h3>
 
-<p>
-  arrays:<br />
-  TODO
-</p>
+<p>arrays:<br />
+TODO</p>
 
 <pre>
 </pre>
@@ -180,10 +170,8 @@ $ echo $LD_LIBRARY_PATH
 
 <h3 id="ref_chars">Chars</h3>
 
-<p>
-  Arrays of char's:<br />
-  TODO
-</p>
+<p>Arrays of char's:<br />
+TODO</p>
 
 
 
@@ -193,16 +181,11 @@ $ echo $LD_LIBRARY_PATH
 
 <h3 id="ref_static">Static Libraries</h3>
 
-<p>
-  Compile with the <code>-static</code> parameter to create a static
-  library.<br />
-</p>
+<p>Compile with the <code>-static</code> parameter to create a static
+library.<br /></p>
 
-<p>
-  Static libraries usually have a
-  <code>.a</code> file extension.<br />
-</p>
-
+<p>Static libraries usually have a
+<code>.a</code> file extension.<br /></p>
 
 
 
@@ -212,10 +195,7 @@ $ echo $LD_LIBRARY_PATH
 
 <h3 id="ref_diff">Difference between Static and Dynamic libraries</h3>
 
-<p>
-  TODO
-</p>
-
+<p>TODO</p>
 
 
 
@@ -225,10 +205,7 @@ $ echo $LD_LIBRARY_PATH
 
 <h3 id="ref_conclude">Conclusion, going further</h3>
 
-<p>
-  TODO
-</p>
-
+<p>TODO</p>
 
 
 
@@ -238,9 +215,7 @@ $ echo $LD_LIBRARY_PATH
 
 <h3 id="ref_version">Version of this document</h3>
 
-<p>
-2023-06-29.b
-</p>
+<p>2023-06-29.b</p>
 
 
 
@@ -252,46 +227,32 @@ $ echo $LD_LIBRARY_PATH
 
 <p id="ref_copy">&copy; 2019 2021 2022 2023 Florent Monnier</p>
 
-<p>
-  You can use this document according to the terms of either one of
-  these licenses:
-</p>
+<p>You can use this document according to the terms of either one of
+these licenses:</p>
 
 <ul>
-  <li>
-    <a href="http://www.gnu.org/licenses/fdl.html"
-      >GNU/FDL license</a>, or
-  </li>
-  <li>
-    <a href="http://creativecommons.org/licenses/by-sa/2.5/"
-      >CC-by-sa license, 2.5</a>
-  </li>
+  <li><a href="http://www.gnu.org/licenses/fdl.html"
+       >GNU/FDL license</a>, or</li>
+  <li><a href="http://creativecommons.org/licenses/by-sa/2.5/"
+       >CC-by-sa license, 2.5</a></li>
 </ul>
 
 <hr />
 
-<p>
-  You can reuse the pieces of code according to the terms of either
-  one of these licenses:
-</p>
+<p>You can reuse the pieces of code according to the terms of either
+one of these licenses:</p>
 
 <ul>
-  <li>
-    <a href="http://www.fsf.org/" title="FSF approved licenses"
-      >Any FSF approved license</a>, or
-  </li>
-  <li>
-    <a href="https://opensource.org/" title="OSI approved licenses"
-      >Any OSI approved license</a>.
-  </li>
+  <li><a href="http://www.fsf.org/" title="FSF approved licenses"
+       >Any FSF approved license</a>, or</li>
+  <li><a href="https://opensource.org/" title="OSI approved licenses"
+       >Any OSI approved license</a>.</li>
 </ul>
 
 <hr />
 
-<p>
-  <img border="0" src="./icon/back.png" />
-  <a href="./">back</a>
-</p>
+<p><img border="0" src="./icon/back.png" />
+<a href="./toc.html">back</a></p>
 
 </body>
 </html>
