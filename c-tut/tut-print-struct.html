@@ -1,0 +1,134 @@
+<html>
+<head>
+<link href="./icon/c-icon.png" rel="shortcut icon" />
+<title>Printing a Structure</title>
+<meta name="description" content="c tutorial, print structure" />
+<meta name="keywords" content="c, tutorial, print structure" />
+<style type="text/css">
+pre {
+  border:1px solid #ccc;
+  margin-right:20%;
+}
+</style>
+</head>
+<body lang="en">
+
+<h1>C tutorial, printf(), with a for loop</h1>
+
+<p>This sixth tutorial tries to show how to
+print a <code>struct</code> structure with-out
+a pointer</p>
+
+<hr />
+
+<h3>Contents</h3>
+
+<ul>
+  <li><a href="#ref_print_struct">Printing a Structure</a></li>
+  <li><a href="#ref_version">Version of this document</a></li>
+  <li><a href="#ref_license">License of this document</a></li>
+</ul>
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_print_struct">Printing a Structure</h3>
+
+<p>file <code>exp12.c</code>:</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+struct _stc {
+  int d1;
+  float f2;
+  char *s;
+};
+
+int
+main()
+{
+  struct _stc stc = { 11, 3.4, "hello" };
+
+  printf("st-stc: {\n");
+  printf(" %d\n", stc.d1);
+  printf(" %g\n", stc.f2);
+  printf(" %s\n", stc.s);
+  printf("}\n");
+
+  return 0;
+}
+</pre>
+
+<p>we compile test and run:</p>
+
+<pre>$ gcc -o exp12.exe exp12.c
+$ ./exp12.exe
+st-stc: {
+ 11
+ 3.4
+ hello
+}
+</pre>
+
+<p>here we print without a pointer to the structure,
+so the fields are access'd with a dot <code>.</code>.</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_conclude">Conclusion, going further</h3>
+
+<p>TODO</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_version">Version of this document</h3>
+
+<p>2026-06-12.b</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_license">License</h3>
+
+<p id="ref_copy">&copy; 2026 Florent Monnier</p>
+
+<p>You can use this document according to the terms of either one of
+these licenses:</p>
+
+<ul>
+  <li><a href="http://www.gnu.org/licenses/fdl.html"
+       >GNU/FDL license</a>, or</li>
+  <li><a href="http://creativecommons.org/licenses/by-sa/2.5/"
+       >CC-by-sa license, 2.5</a></li>
+</ul>
+
+<hr />
+
+<p>You can reuse the pieces of code according to the terms of either
+one of these licenses:</p>
+
+<ul>
+  <li><a href="http://www.fsf.org/" title="FSF approved licenses"
+       >Any FSF approved license</a>, or</li>
+  <li><a href="https://opensource.org/" title="OSI approved licenses"
+       >Any OSI approved license</a>.</li>
+</ul>
+
+<hr />
+
+<p><img border="0" src="./icon/back.png" />
+<a href="./toc.html">back</a></p>
+
+</body>
+</html>
