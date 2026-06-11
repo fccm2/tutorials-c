@@ -1,0 +1,126 @@
+<html>
+<head>
+<link href="./icon/c-icon.png" rel="shortcut icon" />
+<title>printf(), loop over char array,</title>
+<meta name="description" content="c tutorial, for loop with chars" />
+<meta name="keywords" content="c, tutorial, loop, for, char" />
+<style type="text/css">
+pre {
+  border:1px solid #ccc;
+  margin-right:20%;
+}
+</style>
+</head>
+<body lang="en">
+
+<h1>C tutorial, printf(), with a for loop</h1>
+
+<p>This fifth tutorial tries to demonstrate how
+to use the <code>printf()</code> function from
+a for loop</p>
+
+<hr />
+
+<h3>Contents</h3>
+
+<ul>
+  <li><a href="#ref_for_chars">Loop Chars with For</a></li>
+  <li><a href="#ref_version">Version of this document</a></li>
+  <li><a href="#ref_license">License of this document</a></li>
+</ul>
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_for_chars">Printing with printf(), from a For loop</h3>
+
+<p>file <code>exp8.c</code>:</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  char s2[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
+  int c;
+
+  for (c = 0; c &lt; 6; c++) {
+    printf("c-char: %c\n", s2[c]);
+  }
+
+  return 0;
+}
+</pre>
+
+<p>we compile test and run:</p>
+
+<pre>$ gcc -o exp8.exe exp8.c
+$ ./exp8.exe
+c-char: a
+c-char: b
+c-char: c
+c-char: d
+c-char: e
+c-char: f
+</pre>
+
+<p><code>s2</code> is a <code>char array</code></p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_conclude">Conclusion, going further</h3>
+
+<p>TODO</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_version">Version of this document</h3>
+
+<p>2026-06-12.a</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_license">License</h3>
+
+<p id="ref_copy">&copy; 2026 Florent Monnier</p>
+
+<p>You can use this document according to the terms of either one of
+these licenses:</p>
+
+<ul>
+  <li><a href="http://www.gnu.org/licenses/fdl.html"
+       >GNU/FDL license</a>, or</li>
+  <li><a href="http://creativecommons.org/licenses/by-sa/2.5/"
+       >CC-by-sa license, 2.5</a></li>
+</ul>
+
+<hr />
+
+<p>You can reuse the pieces of code according to the terms of either
+one of these licenses:</p>
+
+<ul>
+  <li><a href="http://www.fsf.org/" title="FSF approved licenses"
+       >Any FSF approved license</a>, or</li>
+  <li><a href="https://opensource.org/" title="OSI approved licenses"
+       >Any OSI approved license</a>.</li>
+</ul>
+
+<hr />
+
+<p><img border="0" src="./icon/back.png" />
+<a href="./toc.html">back</a></p>
+
+</body>
+</html>
