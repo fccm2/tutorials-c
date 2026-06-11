@@ -1,0 +1,315 @@
+<html>
+<head>
+<link href="../c-icon.png" rel="shortcut icon" />
+<title>c-tut, printf()</title>
+<meta name="description" content="c tutorial" />
+<meta name="keywords" content="c tutorial" />
+<style type="text/css">
+pre {
+  border-top:1px solid #ccc;
+  border-left:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+</style>
+</head>
+<body lang="en">
+
+<h1>C tutorial, about printf()</h1>
+
+<p>
+This second tutorial is about the use of the 
+<code>printf()</code> function in .c
+</p>
+
+<hr />
+
+<h3>Contents</h3>
+
+<ul>
+  <li><a href="#ref_first">Our first test with printf()</a></li>
+  <li><a href="#ref_int">Printing an Int</a></li>
+  <li><a href="#ref_float">Printing Float's</a></li>
+  <li><a href="#ref_string">Printing Text</a></li>
+  <li><a href="#ref_struct">Printing a Structure</a></li>
+  <li><a href="#ref_version">version of this document</a></li>
+  <li><a href="#ref_license">license of this document</a></li>
+</ul>
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_first">Our first test with printf()</h3>
+
+<p>When we use the printf() function, we have to add
+the <code>stdio.h</code> include at the beginning
+of the file:</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  printf("hello\n");
+  return 0;
+}
+</pre>
+
+<p>Here we just print a simple text, <code>"hello\n"</code>,
+the char <code>"\n"</code> at the end, is there to add a
+new-line.</p>
+
+<pre>gcc test1.c -o test1.exe
+./test1.exe
+hello</pre>
+
+<p>the line <code>return 0</code> at the end is there to
+return an eventual error-code. with <code>0</code>, it
+means there was no error. the standard error-code in
+case there was an error in the program is <code>1</code></p>
+
+<p>you can check this return'd code with:</p>
+
+<pre>./test1.exe
+echo $?
+0</pre>
+
+
+<!-- ======================================================= -->
+
+<hr id="ref_int" />
+
+<p>in the <a href="../c-tut.html">previous tutorial</a>, we saw
+some of the basic type's in .c</p>
+
+<p>here is how to print an <code>int</code>:</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  int d;
+  d = 3;
+  printf("my-int, d: %d\n", d);
+  return 0;
+}
+</pre>
+
+<p>test'ing:</p>
+
+<pre>
+$ gcc test2.c -o test2.exe
+$ ./test2.exe
+my-int, d: 3
+</pre>
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_string">Text</h3>
+
+<p>A string example:</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  char s[] = "alpha";
+  printf("hello %s\n", s);
+  return 0;
+}
+</pre>
+
+<p>testing:</p>
+
+<pre>
+$ gcc test3.c -o test3.exe
+$ ./test3.exe
+hello alpha
+</pre>
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_float">Float's</h3>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  float f = 3.2;
+  printf("my-float: %f\n", f);
+  return 0;
+}
+</pre>
+
+<pre>
+$ gcc test4.c -o test4.exe
+$ ./test4.exe
+my-float: 3.200000
+</pre>
+
+<p>the standard format for a float is <code>'%f'</code>,
+but as you can see it will print a number of <code>0</code>
+zero's at the end, so we can use <code>'%g'</code>
+in-stead:</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  float f = 3.2;
+  printf("my-float: %g\n", f);
+  return 0;
+}
+</pre>
+
+<pre>
+$ gcc test4b.c -o test4b.exe
+$ ./test4b.exe
+my-float: 3.2
+</pre>
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_struct">Printing a Structure</h3>
+
+<p>here we write a <code>print_stc()</code> function</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+struct _stc {
+  int d1;
+  float f2;
+  char *s;
+};
+
+void
+print_stc(struct _stc *stc)
+{
+  printf("my-stc: {\n");
+  printf(" %d\n", stc-&gt;d1);
+  printf(" %g\n", stc-&gt;f2);
+  printf(" %s\n", stc-&gt;s);
+  printf("}\n");
+}
+
+int
+main()
+{
+  struct _stc stc = {
+    11,
+    3.4,
+    "hello"
+  };
+  print_stc(&amp;stc);
+  return 0;
+}
+</pre>
+
+<p>we provide the address of our struct with <code>&amp;</code>,
+so the function <code>print_stc()</code> recieves a pointer to
+the structure, this is why in the prototype of our function
+there is a <code>'*'</code> char before the name of the var.</p>
+
+<p>as the function recieves a pointer, the field's are access'd
+with <code>-&gt;</code>.</p>
+
+<pre>
+$ gcc test5.c -o test5.exe
+$ ./test5.exe
+my-stc: {
+ 11
+ 3.4
+ hello
+}
+</pre>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_conclude">Conclusion, going further</h3>
+
+<p>TODO</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_version">Version of this document</h3>
+
+<p>2026-01-15.a</p>
+
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_license">License</h3>
+
+<p id="ref_copy">&copy; 2025 Florent Monnier</p>
+
+<p>
+  You can use this document according to the terms of either one of
+  these licenses:
+</p>
+
+<ul>
+  <li>
+    <a href="http://www.gnu.org/licenses/fdl.html"
+      >GNU/FDL license</a>, or
+  </li>
+  <li>
+    <a href="http://creativecommons.org/licenses/by-sa/2.5/"
+      >CC-by-sa license, 2.5</a>
+  </li>
+</ul>
+
+
+
+<hr />
+
+
+<p>
+  You can reuse the pieces of code according to the terms of either
+  one of these licenses:
+</p>
+
+<ul>
+  <li>
+    <a href="http://www.fsf.org/" title="FSF approved licenses"
+      >Any FSF approved license</a>, or
+  </li>
+  <li>
+    <a href="https://opensource.org/" title="OSI approved licenses"
+      >Any OSI approved license</a>.
+  </li>
+</ul>
+
+
+<hr />
+
+<p>
+  <img border="0" src="/icons/back.gif" />
+  <a href="./">back</a>
+</p>
+
+</body>
+</html>
