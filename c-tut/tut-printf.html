@@ -16,10 +16,8 @@ pre {
 
 <h1>C tutorial, about printf()</h1>
 
-<p>
-This second tutorial is about the use of the 
-<code>printf()</code> function in .c
-</p>
+<p>This second tutorial is about the use of the
+<code>printf()</code> function in .c</p>
 
 <hr />
 
@@ -92,7 +90,7 @@ int main()
 {
   int d;
   d = 3;
-  printf("d: %d\n", d);
+  printf("d-int, d: %d\n", d);
   return 0;
 }
 </pre>
@@ -102,7 +100,7 @@ int main()
 <pre>
 $ gcc test2.c -o test2.exe
 $ ./test2.exe
-d: 3
+d-int, d: 3
 </pre>
 
 
@@ -119,7 +117,7 @@ d: 3
 
 int main()
 {
-  char s[] = "alpha,";
+  char s[] = "alpha";
   printf("hello %s\n", s);
   return 0;
 }
@@ -130,7 +128,7 @@ int main()
 <pre>
 $ gcc test3.c -o test3.exe
 $ ./test3.exe
-hello alpha,
+hello alpha
 </pre>
 
 
@@ -146,7 +144,7 @@ hello alpha,
 int main()
 {
   float f = 3.2;
-  printf("float: %f\n", f);
+  printf("f-float: %f\n", f);
   return 0;
 }
 </pre>
@@ -154,7 +152,7 @@ int main()
 <pre>
 $ gcc test4.c -o test4.exe
 $ ./test4.exe
-float: 3.200000
+f-float: 3.200000
 </pre>
 
 <p>the standard format for a float is <code>'%f'</code>,
@@ -168,7 +166,7 @@ in-stead:</p>
 int main()
 {
   float f = 3.2;
-  printf("g: %g\n", f);
+  printf("g-float: %g\n", f);
   return 0;
 }
 </pre>
@@ -176,7 +174,7 @@ int main()
 <pre>
 $ gcc test4b.c -o test4b.exe
 $ ./test4b.exe
-g: 3.2
+g-float: 3.2
 </pre>
 
 
@@ -200,7 +198,7 @@ struct _stc {
 void
 print_stc(struct _stc *stc)
 {
-  printf("my-stc: {\n");
+  printf("st-stc: {\n");
   printf(" %d\n", stc-&gt;d1);
   printf(" %g\n", stc-&gt;f2);
   printf(" %s\n", stc-&gt;s);
@@ -227,7 +225,7 @@ with <code>-&gt;</code>.</p>
 <pre>
 $ gcc test5.c -o test5.exe
 $ ./test5.exe
-my-stc: {
+st-stc: {
  11
  3.4
  hello
@@ -250,7 +248,7 @@ my-stc: {
 
 <h3 id="ref_version">Version of this document</h3>
 
-<p>2026-01-15.a</p>
+<p>2026-01-15.b</p>
 
 
 
@@ -262,50 +260,32 @@ my-stc: {
 
 <p id="ref_copy">&copy; 2025 Florent Monnier</p>
 
-<p>
-  You can use this document according to the terms of either one of
-  these licenses:
-</p>
+<p>You can use this document according to the terms of either one of
+these licenses:</p>
 
 <ul>
-  <li>
-    <a href="http://www.gnu.org/licenses/fdl.html"
-      >GNU/FDL license</a>, or
-  </li>
-  <li>
-    <a href="http://creativecommons.org/licenses/by-sa/2.5/"
-      >CC-by-sa license, 2.5</a>
-  </li>
+  <li><a href="http://www.gnu.org/licenses/fdl.html"
+       >GNU/FDL license</a>, or</li>
+  <li><a href="http://creativecommons.org/licenses/by-sa/2.5/"
+       >CC-by-sa license, 2.5</a></li>
 </ul>
-
-
 
 <hr />
 
-
-<p>
-  You can reuse the pieces of code according to the terms of either
-  one of these licenses:
-</p>
+<p>You can reuse the pieces of code according to the terms of either
+one of these licenses:</p>
 
 <ul>
-  <li>
-    <a href="http://www.fsf.org/" title="FSF approved licenses"
-      >Any FSF approved license</a>, or
-  </li>
-  <li>
-    <a href="https://opensource.org/" title="OSI approved licenses"
-      >Any OSI approved license</a>.
-  </li>
+  <li><a href="http://www.fsf.org/" title="FSF approved licenses"
+       >Any FSF approved license</a>, or</li>
+  <li><a href="https://opensource.org/" title="OSI approved licenses"
+       >Any OSI approved license</a>.</li>
 </ul>
-
 
 <hr />
 
-<p>
-  <img border="0" src="/icons/back.gif" />
-  <a href="./">back</a>
-</p>
+<p><img border="0" src="./icon/back.png" />
+<a href="./">back</a></p>
 
 </body>
 </html>
