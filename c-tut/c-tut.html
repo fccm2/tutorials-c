@@ -1,0 +1,604 @@
+<html>
+<head>
+<title>c-tutorial</title>
+<link href="./c-icon.png" rel="shortcut icon" />
+<meta name="description" content="c tutorial" />
+<meta name="keywords" content="c tutorial" />
+<style type="text/css">
+pre {
+  border-top:1px solid #ccc;
+  border-left:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+</style>
+</head>
+<body lang="en">
+
+<h1>A small C program tutorial</h1>
+
+<p>
+This is a small tutorial that introduces how to create
+a small C program.
+</p>
+
+<hr />
+
+<h3>Contents</h3>
+
+<ul>
+  <li><a href="#ref_start">Our first example with C</a></li>
+  <li><a href="#ref_testing">Testing</a></li>
+  <li><a href="#ref_int">Integers</a></li>
+  <li><a href="#ref_add_int">Additions</a></li>
+  <li><a href="#ref_array">Arrays</a></li>
+  <li><a href="#ref_for">For loops</a></li>
+  <li><a href="#ref_chars">Chars Array</a></li>
+  <li><a href="#ref_chars_ptr">Chars Pointers</a></li>
+  <li><a href="#ref_int_ptr">Addresses</a></li>
+  <li><a href="#ref_float ">Float's</a></li>
+  <li><a href="#ref_sizeof">sizeof</a></li>
+  <li><a href="#ref_struct">Structures</a></li>
+  <li><a href="#ref_typedef">Typedef's</a></li>
+  <!-- TODO
+  <li><a href="#ref_libs">Using Libraries</a></li>
+  <li><a href="#ref_mklib">Making Libraries</a></li>
+  <li><a href="#ref_conclude">Conclusion, going further</a></li>
+  -->
+  <li><a href="#ref_version">Version of this document</a></li>
+  <li><a href="#ref_license">License of this document</a></li>
+</ul>
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_start">Our first example with C</h3>
+
+<p>
+</p>
+
+<pre>
+int main()
+{
+  return 1;
+}
+</pre>
+
+<p>
+  Using <code>gcc</code>, we compile and run our small example with:
+</p>
+
+<pre>
+gcc exp1.c -o exp1.exe
+./exp1.exe
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_testing">Testing</h3>
+
+<p>
+  We get the returned code of our program with:
+</p>
+
+<pre>
+./exp1.exe
+echo $?
+1
+</pre>
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_int">Integers</h3>
+
+<p>
+  An integer example (uninitialised):
+</p>
+<pre>
+  int d1;
+</pre>
+
+<p>
+  Declared and initialised at the same time:
+</p>
+<pre>
+  int d1 = 5;
+</pre>
+
+<p>
+  Declared and initialised after:
+</p>
+<pre>
+  int d1;
+  d1 = 5;
+</pre>
+
+<p>
+  Declared with an initialisation, and with its value changed later:
+</p>
+<pre>
+  int d1 = 3;
+  d1 = 12;
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_add_int">Additions</h3>
+
+<p>
+  Additions with integers:
+</p>
+
+<pre>
+int main()
+{
+  int d1 = 2;
+  int d2 = 3;
+  int d3;
+
+  d3 = d1 + d2;
+
+  return d3;
+}
+</pre>
+
+<p>
+  Getting the result:
+</p>
+<pre>
+gcc exp2.c -o exp2.exe
+
+./exp2.exe
+echo $?
+5
+</pre>
+
+
+<p>
+  Or in a more simple way:
+</p>
+<pre>
+int main()
+{
+  return ((6 * 4) + 2);
+}
+</pre>
+
+<pre>
+gcc exp5.c -o exp5.exe
+./exp5.exe
+echo $?
+26
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_array">Arrays</h3>
+
+<p>
+  An array example of 6 integers:
+</p>
+<pre>
+  int d[6];
+</pre>
+
+<p>
+  We can initialise each cells of our array like this:
+</p>
+<pre>
+  d[0] = 1;
+  d[1] = 2;
+  d[2] = 3;
+  d[3] = 4;
+  d[4] = 5;
+  d[5] = 6;
+</pre>
+
+<p>
+  The equivalent array initialised from the beginning:
+</p>
+<pre>
+  int d[] = { 1, 2, 3, 4, 5, 6 };
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_for">For loops</h3>
+
+<p>
+  The equivalent initialisation with a for loop:
+</p>
+<pre>
+  int d[6];
+  int i;
+
+  for (i = 0; i &lt; 6; i++) {
+    d[i] = i + 1;
+  }
+</pre>
+<p>
+  <code>i = 0</code> initialises the variable
+  <code>i</code> before we enter the loop.
+</p>
+
+<p>
+  The loop proceeds as long as
+  <code>i</code> is lower than
+  <code>6</code> (<code>i &lt; 6</code>).
+</p>
+
+<p>
+  We add <code>1</code> to the variable
+  <code>i</code> at each loop steps
+  with <code>i++</code>.
+</p>
+
+<p>
+  Testing:
+</p>
+<pre>
+int main()
+{
+  int d[6];
+  int i;
+
+  for (i = 0; i &lt; 6; i++) {
+    d[i] = i + 1;
+  }
+
+  return d[3];
+}
+</pre>
+
+<pre>
+gcc exp3.c -o exp3.exe
+
+./exp3.exe
+echo $?
+4
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_chars">Chars Array</h3>
+
+<p>
+  Here is an example of array that can contain 6 char's:
+</p>
+<pre>
+  char s1[6];
+</pre>
+
+<p>
+  We can put one <code>char</code> in each cell:
+</p>
+<pre>
+  s1[0] = 'a';
+  s1[1] = 'b';
+  s1[2] = 'c';
+  s1[3] = 'd';
+  s1[4] = 'e';
+  s1[5] = 'f';
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_chars_ptr">Chars Pointers</h3>
+
+<p>
+  A pointer to an array of char's:
+</p>
+<pre>
+  char *s;
+</pre>
+
+<p>
+  Pointing the third element of the previous array:
+</p>
+<pre>
+  s = &amp;(s1[2]);
+</pre>
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_int_ptr">Addresses</h3>
+
+<p>
+  Retrieving the address of a cell containing an integer:
+</p>
+<pre>
+int main()
+{
+  int d[6];
+  int *p;
+
+  d[0] = 1;
+  d[1] = 2;
+  d[2] = 3;
+  d[3] = 4;
+  d[4] = 5;
+  d[5] = 6;
+
+  p = &amp;(d[2]);
+
+  return *p;
+}
+</pre>
+
+<pre>
+gcc exp3.c -o exp3.exe
+./exp3.exe
+3
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_float">Float's</h3>
+
+<p>
+  A <code>float</code> example:
+</p>
+<pre>
+  float n1;
+</pre>
+
+<p>
+  Setting a value for our floating point number:
+</p>
+<pre>
+  n1 = 1.2;
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_sizeof">sizeof</h3>
+
+<pre>
+int main()
+{
+  float a;
+  double b;
+  return sizeof(a);
+}
+</pre>
+
+<pre>
+gcc exp6.c -o exp6.exe
+./exp6.exe
+4
+</pre>
+
+<p>
+  With <code>sizeof(b)</code>:
+</p>
+<pre>
+8
+</pre>
+
+
+<p>
+  And with arrays:
+</p>
+<pre>
+int main()
+{
+  float a[10];
+  double b[10];
+  return sizeof(a);
+}
+</pre>
+<p>
+  We get:
+</p>
+<pre>
+40
+</pre>
+
+
+<p>
+  With several characters:
+</p>
+<pre>
+int main()
+{
+  char cs[] = "abcd";
+  return sizeof(cs);
+}
+</pre>
+<p>
+  an additional ending character is automatically added
+  at the end:
+</p>
+<pre>
+gcc exp8.c -o exp8.exe
+./exp8.exe
+5
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_struct">Structures</h3>
+
+<p>
+  A structure example:
+</p>
+
+<pre>
+struct {
+  float n1;
+  int i;
+  char *s;
+} _str;
+</pre>
+
+
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_typedef">Typedef's</h3>
+
+<p>
+  Here is the previous structure with a
+  <code>typedef</code>:
+</p>
+
+<pre>
+typedef struct str {
+  float n1;
+  int i;
+  char *s;
+} _str;
+</pre>
+
+
+
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_conclude">Conclusion, going further</h3>
+
+<p>
+  TODO
+</p>
+
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_version">Version of this document</h3>
+
+<p>
+2023-07-09.d
+</p>
+
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_license">License</h3>
+
+<p id="ref_copy">&copy; 2019 2021 2022 2023 Florent Monnier</p>
+
+<p>
+  You can use this document according to the terms of either one of
+  these licenses:
+</p>
+
+<ul>
+  <li>
+    <a href="http://www.gnu.org/licenses/fdl.html"
+      >GNU/FDL license</a>, or
+  </li>
+  <li>
+    <a href="http://creativecommons.org/licenses/by-sa/2.5/"
+      >CC-by-sa license, 2.5</a>
+  </li>
+</ul>
+
+
+
+<hr />
+
+
+<p>
+  You can reuse the pieces of code according to the terms of either
+  one of these licenses:
+</p>
+
+<ul>
+  <li>
+    <a href="http://www.fsf.org/" title="FSF approved licenses"
+      >Any FSF approved license</a>, or
+  </li>
+  <li>
+    <a href="https://opensource.org/" title="OSI approved licenses"
+      >Any OSI approved license</a>.
+  </li>
+</ul>
+
+
+<hr />
+
+<p>
+  <img border="0" src="/icons/back.gif" />
+  <a href="./">back</a>
+</p>
+
+</body>
+</html>
