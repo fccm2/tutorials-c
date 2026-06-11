@@ -16,36 +16,34 @@ pre {
 
 <h1>A small C program tutorial</h1>
 
-<p>
-This is a small tutorial that introduces how to create
-a small C program.
-</p>
+<p>This is a small tutorial that introduces how to create
+a small C program.</p>
 
 <hr />
 
-<h3>Contents</h3>
+<h3>contents</h3>
 
 <ul>
-  <li><a href="#ref_start">Our first example with C</a></li>
-  <li><a href="#ref_testing">Testing</a></li>
-  <li><a href="#ref_int">Integers</a></li>
-  <li><a href="#ref_add_int">Additions</a></li>
-  <li><a href="#ref_array">Arrays</a></li>
-  <li><a href="#ref_for">For loops</a></li>
-  <li><a href="#ref_chars">Chars Array</a></li>
-  <li><a href="#ref_chars_ptr">Chars Pointers</a></li>
-  <li><a href="#ref_int_ptr">Addresses</a></li>
-  <li><a href="#ref_float ">Float's</a></li>
+  <li><a href="#ref_start">our first example with c</a></li>
+  <li><a href="#ref_testing">testing</a></li>
+  <li><a href="#ref_int">integers</a></li>
+  <li><a href="#ref_add_int">additions</a></li>
+  <li><a href="#ref_array">arrays</a></li>
+  <li><a href="#ref_for">for loops</a></li>
+  <li><a href="#ref_chars">chars array</a></li>
+  <li><a href="#ref_chars_ptr">chars pointers</a></li>
+  <li><a href="#ref_int_ptr">addresses</a></li>
+  <li><a href="#ref_float ">float's</a></li>
   <li><a href="#ref_sizeof">sizeof</a></li>
-  <li><a href="#ref_struct">Structures</a></li>
-  <li><a href="#ref_typedef">Typedef's</a></li>
+  <li><a href="#ref_struct">structures</a></li>
+  <li><a href="#ref_typedef">typedef's</a></li>
   <!-- TODO
   <li><a href="#ref_libs">Using Libraries</a></li>
   <li><a href="#ref_mklib">Making Libraries</a></li>
   <li><a href="#ref_conclude">Conclusion, going further</a></li>
   -->
-  <li><a href="#ref_version">Version of this document</a></li>
-  <li><a href="#ref_license">License of this document</a></li>
+  <li><a href="#ref_version">version of this document</a></li>
+  <li><a href="#ref_license">license of this document</a></li>
 </ul>
 
 
@@ -54,10 +52,9 @@ a small C program.
 
 <hr />
 
-<h3 id="ref_start">Our first example with C</h3>
+<h3 id="ref_start">our first example with c</h3>
 
-<p>
-</p>
+<p></p>
 
 <pre>
 int main()
@@ -66,15 +63,10 @@ int main()
 }
 </pre>
 
-<p>
-  Using <code>gcc</code>, we compile and run our small example with:
-</p>
+<p>Using <code>gcc</code>, we compile and run our small example with:</p>
 
-<pre>
-gcc exp1.c -o exp1.exe
-./exp1.exe
-</pre>
-
+<pre>$ gcc exp1.c -o exp1.exe
+$ ./exp1.exe</pre>
 
 
 
@@ -85,15 +77,11 @@ gcc exp1.c -o exp1.exe
 
 <h3 id="ref_testing">Testing</h3>
 
-<p>
-  We get the returned code of our program with:
-</p>
+<p>We get the returned code of our program with:</p>
 
-<pre>
-./exp1.exe
-echo $?
-1
-</pre>
+<pre>$ ./exp1.exe
+$ echo $?
+1</pre>
 
 
 
@@ -104,37 +92,42 @@ echo $?
 
 <h3 id="ref_int">Integers</h3>
 
-<p>
-  An integer example (uninitialised):
-</p>
-<pre>
-  int d1;
-</pre>
+<p>Integer examples</p>
 
-<p>
-  Declared and initialised at the same time:
-</p>
+<p>declared and initialised at the same time:</p>
 <pre>
+int main()
+{
   int d1 = 5;
+  return d1;
+}
 </pre>
 
-<p>
-  Declared and initialised after:
-</p>
+<p>declared and initialised after,</p>
 <pre>
+int main()
+{
   int d1;
   d1 = 5;
+  return d1;
+}
 </pre>
 
-<p>
-  Declared with an initialisation, and with its value changed later:
-</p>
+<p>declared with an initialisation, and with its value changed after,</p>
 <pre>
-  int d1 = 3;
-  d1 = 12;
+int main()
+{
+  int d1 = 0;
+  d1 = 5;
+  return d1;
+}
 </pre>
 
 
+<pre>$ gcc example2.c -o example2.exe
+$ ./example2.exe</pre>
+$ echo $?
+5</pre>
 
 
 
@@ -144,9 +137,7 @@ echo $?
 
 <h3 id="ref_add_int">Additions</h3>
 
-<p>
-  Additions with integers:
-</p>
+<p>Additions with integers</p>
 
 <pre>
 int main()
@@ -161,21 +152,18 @@ int main()
 }
 </pre>
 
-<p>
-  Getting the result:
-</p>
-<pre>
-gcc exp2.c -o exp2.exe
+<p>Getting the result:</p>
 
-./exp2.exe
-echo $?
+<pre>
+$ gcc exp3.c -o exp3.exe
+$ ./exp3.exe
+$ echo $?
 5
 </pre>
 
 
-<p>
-  Or in a more simple way:
-</p>
+<p>Or in a more simple way:</p>
+
 <pre>
 int main()
 {
@@ -184,12 +172,11 @@ int main()
 </pre>
 
 <pre>
-gcc exp5.c -o exp5.exe
-./exp5.exe
-echo $?
+$ gcc exp5.c -o exp5.exe
+$ ./exp5.exe
+$ echo $?
 26
 </pre>
-
 
 
 
@@ -200,32 +187,36 @@ echo $?
 
 <h3 id="ref_array">Arrays</h3>
 
-<p>
-  An array example of 6 integers:
-</p>
-<pre>
-  int d[6];
-</pre>
+<p>An array example of 6 integers</p>
 
-<p>
-  We can initialise each cells of our array like this:
-</p>
+<p>we can initialise each cells of our array like this,</p>
+
 <pre>
+int main()
+{
+  int d[6];
+
   d[0] = 1;
   d[1] = 2;
   d[2] = 3;
   d[3] = 4;
   d[4] = 5;
   d[5] = 6;
+
+  return 0;
+}
 </pre>
 
-<p>
-  The equivalent array initialised from the beginning:
-</p>
+<p>the equivalent array initialised from the beginning,</p>
+
 <pre>
+int main()
+{
   int d[] = { 1, 2, 3, 4, 5, 6 };
-</pre>
 
+  return 0;
+}
+</pre>
 
 
 
@@ -236,37 +227,35 @@ echo $?
 
 <h3 id="ref_for">For loops</h3>
 
-<p>
-  The equivalent initialisation with a for loop:
-</p>
+<p>The equivalent initialisation with a for loop</p>
+
 <pre>
+int main()
+{
   int d[6];
   int i;
 
   for (i = 0; i &lt; 6; i++) {
     d[i] = i + 1;
   }
+
+  return 0;
+}
 </pre>
-<p>
-  <code>i = 0</code> initialises the variable
-  <code>i</code> before we enter the loop.
-</p>
 
-<p>
-  The loop proceeds as long as
-  <code>i</code> is lower than
-  <code>6</code> (<code>i &lt; 6</code>).
-</p>
+<p><code>i = 0</code> initialises the variable
+<code>i</code> before we enter the loop,</p>
 
-<p>
-  We add <code>1</code> to the variable
-  <code>i</code> at each loop steps
-  with <code>i++</code>.
-</p>
+<p>the loop proceeds as long as
+<code>i</code> is lower than
+<code>6</code> (<code>i &lt; 6</code>).</p>
 
-<p>
-  Testing:
-</p>
+<p>we add <code>1</code> to the variable
+<code>i</code> at each loop steps
+with <code>i++</code>,</p>
+
+<p>Testing:</p>
+
 <pre>
 int main()
 {
@@ -282,13 +271,11 @@ int main()
 </pre>
 
 <pre>
-gcc exp3.c -o exp3.exe
-
-./exp3.exe
-echo $?
+$ gcc exp6.c -o exp6.exe
+$ ./exp6.exe
+$ echo $?
 4
 </pre>
-
 
 
 
@@ -299,25 +286,25 @@ echo $?
 
 <h3 id="ref_chars">Chars Array</h3>
 
-<p>
-  Here is an example of array that can contain 6 char's:
-</p>
-<pre>
-  char s1[6];
-</pre>
+<p>Here is an example of array that can contain 6 char's</p>
 
-<p>
-  We can put one <code>char</code> in each cell:
-</p>
+<p>We can put one <code>char</code> in each cell:</p>
+
 <pre>
+int main()
+{
+  char s1[6];
+
   s1[0] = 'a';
   s1[1] = 'b';
   s1[2] = 'c';
   s1[3] = 'd';
   s1[4] = 'e';
   s1[5] = 'f';
-</pre>
 
+  return 0;
+}
+</pre>
 
 
 
@@ -328,16 +315,14 @@ echo $?
 
 <h3 id="ref_chars_ptr">Chars Pointers</h3>
 
-<p>
-  A pointer to an array of char's:
-</p>
+<p>A pointer to an array of char's</p>
+
 <pre>
   char *s;
 </pre>
 
-<p>
-  Pointing the third element of the previous array:
-</p>
+<p>Pointing the third element of the previous array:</p>
+
 <pre>
   s = &amp;(s1[2]);
 </pre>
@@ -351,9 +336,8 @@ echo $?
 
 <h3 id="ref_int_ptr">Addresses</h3>
 
-<p>
-  Retrieving the address of a cell containing an integer:
-</p>
+<p>Retrieving the address of a cell containing an integer</p>
+
 <pre>
 int main()
 {
@@ -374,11 +358,11 @@ int main()
 </pre>
 
 <pre>
-gcc exp3.c -o exp3.exe
-./exp3.exe
+$ gcc exp10.c -o exp10.exe
+$ ./exp10.exe
+$ echo $?
 3
 </pre>
-
 
 
 
@@ -389,16 +373,14 @@ gcc exp3.c -o exp3.exe
 
 <h3 id="ref_float">Float's</h3>
 
-<p>
-  A <code>float</code> example:
-</p>
+<p>A <code>float</code> example</p>
+
 <pre>
   float n1;
 </pre>
 
-<p>
-  Setting a value for our floating point number:
-</p>
+<p>Setting a value for our floating point number:</p>
+
 <pre>
   n1 = 1.2;
 </pre>
@@ -423,22 +405,21 @@ int main()
 </pre>
 
 <pre>
-gcc exp6.c -o exp6.exe
-./exp6.exe
+$ gcc exp6.c -o exp6.exe
+$ ./exp6.exe
+$ echo $?
 4
 </pre>
 
-<p>
-  With <code>sizeof(b)</code>:
-</p>
+<p>with <code>sizeof(b)</code>,</p>
+
 <pre>
 8
 </pre>
 
 
-<p>
-  And with arrays:
-</p>
+<p>And with arrays:</p>
+
 <pre>
 int main()
 {
@@ -447,17 +428,16 @@ int main()
   return sizeof(a);
 }
 </pre>
-<p>
-  We get:
-</p>
+
+<p>We get:</p>
+
 <pre>
 40
 </pre>
 
 
-<p>
-  With several characters:
-</p>
+<p>With several characters:</p>
+
 <pre>
 int main()
 {
@@ -465,13 +445,14 @@ int main()
   return sizeof(cs);
 }
 </pre>
-<p>
-  an additional ending character is automatically added
-  at the end:
-</p>
+
+<p>an additional ending character is automatically added
+at the end:</p>
+
 <pre>
-gcc exp8.c -o exp8.exe
-./exp8.exe
+$ gcc exp8.c -o exp8.exe
+$ ./exp8.exe
+$ echo $?
 5
 </pre>
 
@@ -485,9 +466,7 @@ gcc exp8.c -o exp8.exe
 
 <h3 id="ref_struct">Structures</h3>
 
-<p>
-  A structure example:
-</p>
+<p>A structure example:</p>
 
 <pre>
 struct {
@@ -506,10 +485,8 @@ struct {
 
 <h3 id="ref_typedef">Typedef's</h3>
 
-<p>
-  Here is the previous structure with a
-  <code>typedef</code>:
-</p>
+<p>Here is the previous structure with a
+<code>typedef</code>:</p>
 
 <pre>
 typedef struct str {
@@ -529,9 +506,7 @@ typedef struct str {
 
 <h3 id="ref_conclude">Conclusion, going further</h3>
 
-<p>
-  TODO
-</p>
+<p>TODO</p>
 
 
 
@@ -541,9 +516,7 @@ typedef struct str {
 
 <h3 id="ref_version">Version of this document</h3>
 
-<p>
-2023-07-09.d
-</p>
+<p>2023-07-09.d</p>
 
 
 
@@ -555,10 +528,8 @@ typedef struct str {
 
 <p id="ref_copy">&copy; 2019 2021 2022 2023 Florent Monnier</p>
 
-<p>
-  You can use this document according to the terms of either one of
-  these licenses:
-</p>
+<p>You can use this document according to the terms of either one of
+these licenses:</p>
 
 <ul>
   <li>
@@ -576,10 +547,8 @@ typedef struct str {
 <hr />
 
 
-<p>
-  You can reuse the pieces of code according to the terms of either
-  one of these licenses:
-</p>
+<p>You can reuse the pieces of code according to the terms of either
+one of these licenses:</p>
 
 <ul>
   <li>
@@ -596,8 +565,8 @@ typedef struct str {
 <hr />
 
 <p>
-  <img border="0" src="/icons/back.gif" />
-  <a href="./">back</a>
+  <img border="0" src="./icon/back.gif" />
+  <a href="./toc.html">back</a>
 </p>
 
 </body>
