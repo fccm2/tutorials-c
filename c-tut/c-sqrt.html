@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>floor-sqrt, with .c</title>
+<meta name="keywords" content="tutorial, sqrt, c, floor, int" />
+<meta name="description" content="How to make a floor-sqrt with the .c programming language." />
+<meta name="auhtor" content="Florent Monnier, 2025" />
+<meta name="license" content="fdl, cc-by-sa_2.5 OR Later, spdx:Any" />
+<style>
+pre { border:1px solid #000; margin-right:20%; }
+.Special { color:#cfa796; }
+.Statement { color:#d0c010; }
+.Type { color:#47cf7f; }
+.PreProc { color:#2fa7df; }
+.Constant { color:#ff40ff; }
+</style>
+</head>
+<body>
+<h1>floor-sqrt, with .c</h1>
+
+<p>File: <a href="./file/sqrt.c">sqrt.c</a></p>
+
+<p>How to make a <code>floor-sqrt</code> with the <code>.c</code>
+programming-language:</p>
+
+<pre>
+<span class="PreProc">#include </span><span class="Constant">&lt;stdio.h&gt;</span>
+
+<span class="Type">unsigned</span> <span class="Type">int</span> sq_table[<span class="Constant">80</span>];
+
+<span class="PreProc">#define MUM_SQUARE </span><span class="Constant">80</span>
+
+<span class="Type">int</span>
+floor_square_root(<span class="Type">int</span> x)
+{
+  <span class="Type">int</span> r;
+  <span class="Statement">for</span> (r = (MUM_SQUARE - <span class="Constant">1</span>); r &gt;= <span class="Constant">0</span>; r--) {
+    <span class="Statement">if</span> (sq_table[r] &gt; x) <span class="Statement">continue</span>;
+    <span class="Statement">return</span> r;
+  }
+}
+
+<span class="Type">void</span>
+init_square_table()
+{
+  <span class="Statement">for</span> (<span class="Type">int</span> s = <span class="Constant">0</span>; s &lt; MUM_SQUARE; s++) {
+    sq_table[s] = (s * s);
+  }
+}
+
+<span class="Type">int</span> main(<span class="Type">void</span>)
+{
+  <span class="Type">int</span> x;
+  <span class="Type">int</span> r;
+  init_square_table();
+  x = <span class="Constant">15</span>;
+  printf(<span class="Constant">&quot;x:</span><span class="Special">%d</span><span class="Special">\n</span><span class="Constant">&quot;</span>, x);
+  r = floor_square_root(x);
+  printf(<span class="Constant">&quot;r:</span><span class="Special">%d</span><span class="Special">\n</span><span class="Constant">&quot;</span>, r);
+  <span class="Statement">for</span> (<span class="Type">int</span> s = <span class="Constant">0</span>; s &lt; <span class="Constant">13</span>; s++) {
+    printf(<span class="Constant">&quot;[</span><span class="Special">%d</span><span class="Constant">]: </span><span class="Special">%d</span><span class="Constant">, (</span><span class="Special">%d</span><span class="Constant">)</span><span class="Special">\n</span><span class="Constant">&quot;</span>, s, sq_table[s], (s * s));
+  }
+  <span class="Statement">return</span> <span class="Constant">0</span>;
+}
+
+</pre>
+
+Testing:
+
+<pre>
+$ gcc -o sqrt.exe sqrt.c
+$ ./sqrt.exe
+x:15
+r:3
+[0]: 0, (0)
+[1]: 1, (1)
+[2]: 4, (4)
+[3]: 9, (9)
+[4]: 16, (16)
+[5]: 25, (25)
+[6]: 36, (36)
+[7]: 49, (49)
+[8]: 64, (64)
+[9]: 81, (81)
+[10]: 100, (100)
+[11]: 121, (121)
+[12]: 144, (144)
+</pre>
+
+<p><a href="./">&lt;..</a></p>
+
+</body>
+</html>
