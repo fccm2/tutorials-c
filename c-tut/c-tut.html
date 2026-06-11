@@ -1,14 +1,13 @@
 <html>
 <head>
 <title>c-tutorial</title>
-<link href="./c-icon.png" rel="shortcut icon" />
+<link href="./icon/c-icon.png" rel="shortcut icon" />
 <meta name="description" content="c tutorial" />
 <meta name="keywords" content="c tutorial" />
 <style type="text/css">
 pre {
-  border-top:1px solid #ccc;
-  border-left:1px solid #ccc;
-  border-bottom:1px solid #ccc;
+  border:1px solid #ccc;
+  margin-right:20%;
 }
 </style>
 </head>
@@ -21,29 +20,29 @@ a small C program.</p>
 
 <hr />
 
-<h3>contents</h3>
+<h3>Contents</h3>
 
 <ul>
-  <li><a href="#ref_start">our first example with c</a></li>
-  <li><a href="#ref_testing">testing</a></li>
-  <li><a href="#ref_int">integers</a></li>
-  <li><a href="#ref_add_int">additions</a></li>
-  <li><a href="#ref_array">arrays</a></li>
+  <li><a href="#ref_start">Our first example with c</a></li>
+  <li><a href="#ref_testing">Testing</a></li>
+  <li><a href="#ref_int">Integers</a></li>
+  <li><a href="#ref_add_int">Additions</a></li>
+  <li><a href="#ref_array">Arrays</a></li>
   <li><a href="#ref_for">for loops</a></li>
   <li><a href="#ref_chars">chars array</a></li>
   <li><a href="#ref_chars_ptr">chars pointers</a></li>
-  <li><a href="#ref_int_ptr">addresses</a></li>
-  <li><a href="#ref_float ">float's</a></li>
+  <li><a href="#ref_int_ptr">Addresses</a></li>
+  <li><a href="#ref_float">Float's</a></li>
   <li><a href="#ref_sizeof">sizeof</a></li>
   <li><a href="#ref_struct">structures</a></li>
-  <li><a href="#ref_typedef">typedef's</a></li>
+  <li><a href="#ref_typedef">Typedef's</a></li>
   <!-- TODO
   <li><a href="#ref_libs">Using Libraries</a></li>
   <li><a href="#ref_mklib">Making Libraries</a></li>
   <li><a href="#ref_conclude">Conclusion, going further</a></li>
   -->
-  <li><a href="#ref_version">version of this document</a></li>
-  <li><a href="#ref_license">license of this document</a></li>
+  <li><a href="#ref_version">Version of this document</a></li>
+  <li><a href="#ref_license">License of this document</a></li>
 </ul>
 
 
@@ -278,7 +277,6 @@ $ echo $?
 
 
 
-
 <!-- ======================================================= -->
 
 <hr />
@@ -307,7 +305,6 @@ int main()
 
 
 
-
 <!-- ======================================================= -->
 
 <hr />
@@ -325,7 +322,6 @@ int main()
 <pre>
   s = &amp;(s1[2]);
 </pre>
-
 
 
 
@@ -365,7 +361,6 @@ $ echo $?
 
 
 
-
 <!-- ======================================================= -->
 
 <hr />
@@ -383,8 +378,6 @@ $ echo $?
 <pre>
   n1 = 1.2;
 </pre>
-
-
 
 
 
@@ -412,9 +405,7 @@ $ echo $?
 
 <p>with <code>sizeof(b)</code>,</p>
 
-<pre>
-8
-</pre>
+<pre>8</pre>
 
 
 <p>And with arrays:</p>
@@ -430,9 +421,7 @@ int main()
 
 <p>We get:</p>
 
-<pre>
-40
-</pre>
+<pre>40</pre>
 
 
 <p>With several characters:</p>
@@ -458,7 +447,6 @@ $ echo $?
 
 
 
-
 <!-- ======================================================= -->
 
 <hr />
@@ -474,7 +462,6 @@ struct {
   char *s;
 } _str;
 </pre>
-
 
 
 
@@ -497,8 +484,6 @@ typedef struct str {
 
 
 
-
-
 <!-- ======================================================= -->
 
 <hr style="margin-top:2.4em;" />
@@ -508,7 +493,6 @@ typedef struct str {
 <p>TODO</p>
 
 
-
 <!-- ======================================================= -->
 
 <hr style="margin-top:2.4em;" />
@@ -516,7 +500,6 @@ typedef struct str {
 <h3 id="ref_version">Version of this document</h3>
 
 <p>2023-07-09.d</p>
-
 
 
 <!-- ======================================================= -->
@@ -531,42 +514,29 @@ typedef struct str {
 these licenses:</p>
 
 <ul>
-  <li>
-    <a href="http://www.gnu.org/licenses/fdl.html"
-      >GNU/FDL license</a>, or
-  </li>
-  <li>
-    <a href="http://creativecommons.org/licenses/by-sa/2.5/"
-      >CC-by-sa license, 2.5</a>
-  </li>
+  <li><a href="http://www.gnu.org/licenses/fdl.html"
+       >GNU/FDL license</a>, or</li>
+  <li><a href="http://creativecommons.org/licenses/by-sa/2.5/"
+       >CC-by-sa license, 2.5</a></li>
 </ul>
 
 
-
 <hr />
-
 
 <p>You can reuse the pieces of code according to the terms of either
 one of these licenses:</p>
 
 <ul>
-  <li>
-    <a href="http://www.fsf.org/" title="FSF approved licenses"
-      >Any FSF approved license</a>, or
-  </li>
-  <li>
-    <a href="https://opensource.org/" title="OSI approved licenses"
-      >Any OSI approved license</a>.
-  </li>
+  <li><a href="http://www.fsf.org/" title="FSF approved licenses"
+       >Any FSF approved license</a>, or</li>
+  <li><a href="https://opensource.org/" title="OSI approved licenses"
+       >Any OSI approved license</a>.</li>
 </ul>
-
 
 <hr />
 
-<p>
-  <img border="0" src="./icon/back.gif" />
-  <a href="./toc.html">back</a>
-</p>
+<p><img border="0" src="./icon/back.png" />
+<a href="./toc.html">back</a></p>
 
 </body>
 </html>
