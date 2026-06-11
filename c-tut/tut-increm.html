@@ -1,0 +1,121 @@
+<html>
+<head>
+<link href="./icon/c-icon.png" rel="shortcut icon" />
+<title>Incrementing an Integer</title>
+<meta name="description" content="c tutorial, increment an int" />
+<meta name="keywords" content="c tutorial increment int" />
+<style type="text/css">
+pre {
+  border:1px solid #ccc;
+  margin-right:20%;
+}
+</style>
+</head>
+<body lang="en">
+
+<h1>C tutorial, printf(), with a for loop</h1>
+
+<p>This fifth tutorial tries to explain how
+to simply increment an <code>integer</code>,</p>
+
+<hr />
+
+<h3>Contents</h3>
+
+<ul>
+  <li><a href="#ref_increm">Incrementing an Integer</a></li>
+  <li><a href="#ref_version">Version of this document</a></li>
+  <li><a href="#ref_license">License of this document</a></li>
+</ul>
+
+
+<!-- ======================================================= -->
+
+<hr />
+
+<h3 id="ref_increm">Printing with printf(), from a For loop</h3>
+
+<p>file <code>exp11.c</code>:</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  int d;
+
+  d = 2;
+  d++;
+
+  printf("d-int: %d\n", d);
+
+  return 0;
+}
+</pre>
+
+<p>we compile test and run:</p>
+
+<pre>$ gcc -o exp11.exe exp11.c
+$ ./exp11.exe
+d-int: 3
+</pre>
+
+<p>you can try to put several <code>d++;</code>,
+to see the difference,</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_conclude">Conclusion, going further</h3>
+
+<p>TODO</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_version">Version of this document</h3>
+
+<p>2026-06-12.a</p>
+
+
+<!-- ======================================================= -->
+
+<hr style="margin-top:2.4em;" />
+
+<h3 id="ref_license">License</h3>
+
+<p id="ref_copy">&copy; 2026 Florent Monnier</p>
+
+<p>You can use this document according to the terms of either one of
+these licenses:</p>
+
+<ul>
+  <li><a href="http://www.gnu.org/licenses/fdl.html"
+       >GNU/FDL license</a>, or</li>
+  <li><a href="http://creativecommons.org/licenses/by-sa/2.5/"
+       >CC-by-sa license, 2.5</a></li>
+</ul>
+
+<hr />
+
+<p>You can reuse the pieces of code according to the terms of either
+one of these licenses:</p>
+
+<ul>
+  <li><a href="http://www.fsf.org/" title="FSF approved licenses"
+       >Any FSF approved license</a>, or</li>
+  <li><a href="https://opensource.org/" title="OSI approved licenses"
+       >Any OSI approved license</a>.</li>
+</ul>
+
+<hr />
+
+<p><img border="0" src="./icon/back.png" />
+<a href="./toc.html">back</a></p>
+
+</body>
+</html>
