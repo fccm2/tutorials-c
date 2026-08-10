@@ -11,7 +11,7 @@ code { border:1px solid #ccc; }
 </head>
 <body lang="en">
 
-<h1>C tutorial, structure print without pointer-address</h1>
+<h1>C tutorial, structure print with pointer-address</h1>
 
 <p>This sixth tutorial tries to show how to
 print a <code>struct</code> structure with-out
@@ -34,7 +34,7 @@ a pointer</p>
 
 <h3 id="ref_print_struct">Printing a Structure</h3>
 
-<p>file <code>exp12.c</code>:</p>
+<p>file <code>exp13.c</code>:</p>
 
 <pre>
 #include &lt;stdio.h&gt;
@@ -45,29 +45,37 @@ struct _stc {
   char *s;
 };
 
+void
+print_stc(struct _stc *stc)
+{
+  printf("st-stc: {\n");
+  printf(" %d\n", stc-&gt;d1);
+  printf(" %g\n", stc-&gt;f2);
+  printf(" %s\n", stc-&gt;s);
+  printf("}\n");
+}
+
 int
 main()
 {
-  struct _stc stc = { 11, 3.4, "hello" };
+  struct _stc stc = { 12, 3.6, "hello," };
 
-  printf("st-stc: {\n");
-  printf(" %d\n", stc.d1);
-  printf(" %g\n", stc.f2);
-  printf(" %s\n", stc.s);
-  printf("}\n");
+  print_stc(&amp;stc);
 
   return 0;
 }
+
+
 </pre>
 
 <p>we compile test and run:</p>
 
-<pre>$ gcc -o exp12.exe exp12.c
-$ ./exp12.exe
+<pre>$ gcc -o exp13.exe exp13.c
+$ ./exp13.exe
 st-stc: {
- 11
- 3.4
- hello
+ 12
+ 3.6
+ hello,
 }
 </pre>
 
@@ -90,7 +98,7 @@ so the fields are access'd with a dot <code>.</code>.</p>
 
 <h3 id="ref_version">Version of this document</h3>
 
-<p>2026-06-12.b</p>
+<p>2026-06-13.c</p>
 
 
 <!-- ======================================================= -->
@@ -128,8 +136,8 @@ one of these licenses:</p>
 <p><img border="0" src="./icon/back.png" />
 <a href="./toc-2.html">back</a> /
 
-<img border="0" src="./icon/next.png" />
-<a href="./tut-print-struct-2.html">next</a></p>
+<img border="0" src="./icon/prev.png" />
+<a href="./tut-print-struct.html">prev</a></p>
 
 </body>
 </html>
